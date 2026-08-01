@@ -1,0 +1,60 @@
+generated: '2026-07-20'
+method: searched
+source: https://perseus.computer/docs
+name: perseus
+summary: >-
+  First-party command-line tool for Perseus semantic code search. Indexes a working tree (including
+  uncommitted edits) and answers plain-English queries with ranked file:line results. This is the
+  primary developer surface — Perseus publishes no REST/HTTP API; the CLI is the client.
+binary: perseus
+install:
+  methods:
+  - platform: macos-linux
+    command: curl -fsSL https://perseus.computer/install.sh | sh
+    kind: shell-installer
+  - platform: windows
+    command: irm https://perseus.computer/install.ps1 | iex
+    kind: powershell-installer
+  packaging:
+  - standalone PyInstaller-frozen binary (preferred; no python/uv/pip required)
+  - uv tool venv from a self-hosted wheel (fallback; requires uv + python >= 3.12)
+  env_overrides:
+  - PERSEUS_INSTALL_METHOD=wheel|binary
+  - PERSEUS_WHEEL_URL
+  - PERSEUS_BINARY_URL
+auth:
+  style: token
+  commands:
+  - perseus login
+  - perseus login --device   # headless / remote environments
+commands:
+- name: login
+  description: Authenticate the CLI (supports --device for headless environments).
+- name: index
+  description: Re-index the current checkout (incremental; includes uncommitted edits).
+- name: watch
+  description: Auto-reindex as files change (preferred during active work).
+- name: query
+  description: "Plain-English semantic search over the index. Flags: --no-summary, --json, --files-only, -k <n>. Exit code 1 on zero hits."
+- name: research
+  description: Deeper research query over the codebase.
+- name: impact
+  description: Assess the impact/blast-radius of a change.
+- name: eval
+  description: Evaluate search quality / run evaluations.
+- name: path
+  description: Resolve paths related to a query.
+- name: status
+  description: Show CLI / index status.
+- name: indexes
+  description: Manage indexed repositories.
+- name: billing
+  description: View billing and plan usage.
+- name: feedback
+  description: Send feedback to Perseus.
+- name: rules
+  description: Manage search rules / configuration.
+agent_mode_example: perseus query --no-summary --json "auth enforcement on the login route" | jq '.hits[]'
+notes:
+- No REST/OpenAPI/MCP surface published as of this pass; the CLI (and the packaged Agent Skill) is the integration point.
+- A man page is installed best-effort (man perseus).

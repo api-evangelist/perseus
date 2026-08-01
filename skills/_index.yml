@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/efficientsystemsinc/perseus-skill
+skills:
+- file: perseus-code-search.md
+  name: perseus
+  description: Plain-English semantic code search — describe the code and get ranked file:line results.
+  provider_published: true
+  install:
+  - npx skills add efficientsystemsinc/perseus-skill
+  - gh skill install efficientsystemsinc/perseus-skill perseus
+  operations:
+  - perseus query
+  - perseus index
+  - perseus watch
+  repo: https://github.com/efficientsystemsinc/perseus-skill
+  license: MIT

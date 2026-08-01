@@ -1,7 +1,30 @@
 aid: perseus
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/perseus.png
 name: Perseus
-description: Perseus is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Perseus (legal name Efficient Systems Inc.) is an applied AI lab focused on semantic search in
+  latent spaces, founded by Samrath Chadha and backed by Y Combinator (Fall 2025 batch). Its first
+  product is a retrieval engine that grounds coding agents in real code: developers and agents
+  describe the code they are looking for in plain English and Perseus returns ranked file:line
+  results with snippets in seconds, indexing the working tree (including uncommitted edits) so
+  models like Claude Code, Cursor, and Codex can find the right context before editing. Rather than
+  a public REST API, Perseus ships a first-party CLI (installed via a curl/PowerShell one-liner, as
+  a PyInstaller binary or uv wheel), a provider-published Agent Skill, and a Factory Droid plugin,
+  all under the efficientsystemsinc GitHub organization. The developer surface — docs, console,
+  pricing, and blog — is live; there is no OpenAPI, MCP server, or /.well-known discovery document
+  published as of this pass.
 url: https://raw.githubusercontent.com/api-evangelist/perseus/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +34,54 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Artificial Intelligence
+- Developer Tools
+- Code Search
+- Semantic Search
+- Coding Agents
+- AI Agents
+- Latent Space
+- CLI
+- Agent Skills
+- Y Combinator
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
 apis: []
+common:
+- type: Website
+  url: https://perseus.computer
+- type: Documentation
+  url: https://perseus.computer/docs
+- type: GettingStarted
+  url: https://perseus.computer/docs
+- type: DeveloperPortal
+  url: https://perseus.computer/console
+- type: Pricing
+  url: https://perseus.computer/pricing
+- type: Blog
+  url: https://perseus.computer/blog
+- type: SignUp
+  url: https://perseus.computer/console/onboarding?plan=developer_monthly
+- type: Support
+  url: mailto:hello@perseus.computer
+- type: GitHubOrganization
+  url: https://github.com/efficientsystemsinc
+- type: CLI
+  url: cli/perseus-cli.yml
+- type: AgentSkill
+  url: skills/perseus-code-search.md
+- type: Packages
+  url: packages/perseus-packages.yml
+- type: Authentication
+  url: authentication/perseus-authentication.yml
+- type: DomainSecurity
+  url: security/perseus-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

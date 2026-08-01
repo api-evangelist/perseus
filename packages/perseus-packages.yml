@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://perseus.computer/docs
+note: >-
+  Perseus distributes its CLI as a self-hosted PyInstaller binary and a uv-installable wheel served
+  from perseus.computer/install (not published to PyPI). It also ships first-party integration
+  packages via its GitHub org (efficientsystemsinc). No importable server-side SDK / client library
+  is published, so no `SDKs` pointer is emitted — the CLI is the client.
+packages:
+- language: python
+  registry: self-hosted
+  name: perseus
+  kind: cli
+  url: https://perseus.computer/install.sh
+  install: curl -fsSL https://perseus.computer/install.sh | sh
+  official: true
+  notes: PyInstaller binary preferred; uv wheel (python>=3.12) fallback. Wheel example perseus-0.1.0-py3-none-any.whl.
+- language: markdown
+  registry: skills.sh / github
+  name: efficientsystemsinc/perseus-skill
+  kind: agent-skill
+  url: https://github.com/efficientsystemsinc/perseus-skill
+  install: npx skills add efficientsystemsinc/perseus-skill
+  official: true
+  notes: Provider-published Agent Skill for plain-English code search. MIT.
+- language: shell
+  registry: github
+  name: efficientsystemsinc/perseus-droid
+  kind: plugin
+  url: https://github.com/efficientsystemsinc/perseus-droid
+  install: git clone / plugin install
+  official: true
+  notes: Perseus semantic code search — Factory Droid plugin.

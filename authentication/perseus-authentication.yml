@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://perseus.computer/docs
+docs: https://perseus.computer/docs
+summary:
+  types: [token]
+  api_key_in: []
+  oauth2_flows: []
+  notes: >-
+    Authentication is handled through the Perseus CLI, not a public HTTP API. `perseus login`
+    performs an interactive browser-based sign-in; `perseus login --device` runs a device
+    authorization flow for headless/remote environments. The resulting token is stored by the CLI
+    and used for subsequent commands. No API-key header or documented OAuth2 authorization-server
+    endpoints are published as of this pass (no OpenAPI, no /.well-known/openid-configuration or
+    /oauth-authorization-server — both returned 404).
+schemes:
+- name: cli-token
+  type: token
+  via: perseus login
+  device_flow: true
+  sources: [https://perseus.computer/docs]
