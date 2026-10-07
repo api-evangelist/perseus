@@ -1,0 +1,49 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://perseus.computer/pricing
+sources:
+- https://perseus.computer/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Three tiers with per-seat monthly pricing plus a one-time demo; larger plans via email.
+plan_count: 3
+currency: USD
+plans:
+- name: Demo week
+  price_text: $5 / one-time / 7 days
+  price: 5
+  currency: USD
+  period: one-time
+  unit: 7 days
+  included_quota: 250 queries, 1 indexed repository, 100k indexed LOC, 20 ask calls, 7 days memory retention
+- name: Developer
+  price_text: $20 / seat / month
+  price: 20
+  currency: USD
+  period: month
+  unit: seat
+  included_quota: 2,000 queries / month, 3 indexed repositories, 2M indexed LOC, 200 ask calls / month,
+    90 days memory retention
+- name: Scale
+  price_text: $100 / seat / month
+  price: 100
+  currency: USD
+  period: month
+  unit: seat
+  included_quota: 5,000 queries / month, 15 indexed repositories, 25M indexed LOC, 1,500 ask calls / month,
+    Unbounded memory retention
+rate_limit_statements:
+- 2,000 queries / month
+- 5,000 queries / month
+- 200 ask calls / month
+- 1,500 ask calls / month
