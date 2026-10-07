@@ -65,6 +65,8 @@ x-enrichment:
   pass: local-v1
 apis: []
 common:
+- type: Plans
+  url: plans/perseus-plans-pricing.yml
 - type: Website
   url: https://perseus.computer
 - type: Documentation
